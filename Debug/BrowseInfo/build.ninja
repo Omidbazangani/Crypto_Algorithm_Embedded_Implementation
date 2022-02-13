@@ -1,0 +1,143 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\XclFileGenerator.exe $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\XclFileGenerator.exe" $flags
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\SourceIndexer.exe $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\SourceIndexer.exe" $flags
+
+rule MAKEBROWSE
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\makeBrowseData.exe $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\makeBrowseData.exe" $flags
+
+rule PDBLINK
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\PbdLink.exe $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\PbdLink.exe" $flags
+
+
+
+#Build steps
+build E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_clkpwr.xcl : COMPILER_XCL 
+  xclcommand = -source_file E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\LIB\source\lpc17xx_clkpwr.c -xcl_file E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_clkpwr.xcl -macro_file E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_clkpwr.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\LIB\source\lpc17xx_clkpwr.c -o E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\Obj\CMSIS --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\CMSIS\Include\ -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\LIB\include\ -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\SRC\ -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Xoodoo_LIB\Xoodoo_Abby\ -On --predef_macros E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_clkpwr.tmp
+  rspfile_name = E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_clkpwr.xcl.rsp
+
+build E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_gpio.xcl : COMPILER_XCL 
+  xclcommand = -source_file E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\LIB\source\lpc17xx_gpio.c -xcl_file E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_gpio.xcl -macro_file E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_gpio.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\LIB\source\lpc17xx_gpio.c -o E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\Obj\CMSIS --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\CMSIS\Include\ -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\LIB\include\ -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\SRC\ -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Xoodoo_LIB\Xoodoo_Abby\ -On --predef_macros E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_gpio.tmp
+  rspfile_name = E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_gpio.xcl.rsp
+
+build E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_libcfg_default.xcl : COMPILER_XCL 
+  xclcommand = -source_file E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\LIB\source\lpc17xx_libcfg_default.c -xcl_file E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_libcfg_default.xcl -macro_file E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_libcfg_default.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\LIB\source\lpc17xx_libcfg_default.c -o E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\Obj\CMSIS --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\CMSIS\Include\ -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\LIB\include\ -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\SRC\ -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Xoodoo_LIB\Xoodoo_Abby\ -On --predef_macros E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_libcfg_default.tmp
+  rspfile_name = E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_libcfg_default.xcl.rsp
+
+build E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_pinsel.xcl : COMPILER_XCL 
+  xclcommand = -source_file E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\LIB\source\lpc17xx_pinsel.c -xcl_file E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_pinsel.xcl -macro_file E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_pinsel.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\LIB\source\lpc17xx_pinsel.c -o E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\Obj\CMSIS --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\CMSIS\Include\ -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\LIB\include\ -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\SRC\ -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Xoodoo_LIB\Xoodoo_Abby\ -On --predef_macros E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_pinsel.tmp
+  rspfile_name = E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_pinsel.xcl.rsp
+
+build E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_uart.xcl : COMPILER_XCL 
+  xclcommand = -source_file E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\LIB\source\lpc17xx_uart.c -xcl_file E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_uart.xcl -macro_file E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_uart.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\LIB\source\lpc17xx_uart.c -o E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\Obj\CMSIS --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\CMSIS\Include\ -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\LIB\include\ -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\SRC\ -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Xoodoo_LIB\Xoodoo_Abby\ -On --predef_macros E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_uart.tmp
+  rspfile_name = E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_uart.xcl.rsp
+
+build E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\system_LPC17xx.xcl : COMPILER_XCL 
+  xclcommand = -source_file E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\CMSIS\Source\Templates\system_LPC17xx.c -xcl_file E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\system_LPC17xx.xcl -macro_file E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\system_LPC17xx.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\CMSIS\Source\Templates\system_LPC17xx.c -o E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\Obj\CMSIS --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\CMSIS\Include\ -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\LIB\include\ -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\SRC\ -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Xoodoo_LIB\Xoodoo_Abby\ -On --predef_macros E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\system_LPC17xx.tmp
+  rspfile_name = E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\system_LPC17xx.xcl.rsp
+
+build E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\SRC\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\SRC\main.c -xcl_file E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\SRC\main.xcl -macro_file E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\SRC\main.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\SRC\main.c -o E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\Obj\SRC --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\CMSIS\Include\ -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\LIB\include\ -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\SRC\ -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Xoodoo_LIB\Xoodoo_Abby\ -On --predef_macros E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\SRC\main.tmp
+  rspfile_name = E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\SRC\main.xcl.rsp
+
+build E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\SRC\peripherals.xcl : COMPILER_XCL 
+  xclcommand = -source_file E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\SRC\peripherals.c -xcl_file E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\SRC\peripherals.xcl -macro_file E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\SRC\peripherals.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\SRC\peripherals.c -o E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\Obj\SRC --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\CMSIS\Include\ -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\LIB\include\ -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\SRC\ -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Xoodoo_LIB\Xoodoo_Abby\ -On --predef_macros E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\SRC\peripherals.tmp
+  rspfile_name = E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\SRC\peripherals.xcl.rsp
+
+build E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo\ecrypt-sync.xcl : COMPILER_XCL 
+  xclcommand = -source_file E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Xoodoo_LIB\Xoodoo_Abby\ecrypt-sync.c -xcl_file E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo\ecrypt-sync.xcl -macro_file E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo\ecrypt-sync.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Xoodoo_LIB\Xoodoo_Abby\ecrypt-sync.c -o E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\Obj\Xoodoo --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\CMSIS\Include\ -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\LIB\include\ -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\SRC\ -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Xoodoo_LIB\Xoodoo_Abby\ -On --predef_macros E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo\ecrypt-sync.tmp
+  rspfile_name = E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo\ecrypt-sync.xcl.rsp
+
+build E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo\xoodoo-masked-optimized.xcl : COMPILER_XCL 
+  xclcommand = -source_file E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Xoodoo_LIB\Xoodoo_Abby\xoodoo-masked-optimized.c -xcl_file E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo\xoodoo-masked-optimized.xcl -macro_file E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo\xoodoo-masked-optimized.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Xoodoo_LIB\Xoodoo_Abby\xoodoo-masked-optimized.c -o E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\Obj\Xoodoo --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\CMSIS\Include\ -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\LIB\include\ -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\SRC\ -I E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Xoodoo_LIB\Xoodoo_Abby\ -On --predef_macros E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo\xoodoo-masked-optimized.tmp
+  rspfile_name = E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo\xoodoo-masked-optimized.xcl.rsp
+
+build E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_clkpwr.pbi : INDEXER E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_clkpwr.xcl |  $
+E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\LIB\source\lpc17xx_clkpwr.c
+  flags = -out=E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_clkpwr.pbi -f E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_clkpwr.xcl
+
+build E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_gpio.pbi : INDEXER E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_gpio.xcl |  $
+E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\LIB\source\lpc17xx_gpio.c
+  flags = -out=E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_gpio.pbi -f E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_gpio.xcl
+
+build E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_libcfg_default.pbi : INDEXER E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_libcfg_default.xcl |  $
+E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\LIB\source\lpc17xx_libcfg_default.c
+  flags = -out=E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_libcfg_default.pbi -f E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_libcfg_default.xcl
+
+build E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_pinsel.pbi : INDEXER E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_pinsel.xcl |  $
+E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\LIB\source\lpc17xx_pinsel.c
+  flags = -out=E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_pinsel.pbi -f E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_pinsel.xcl
+
+build E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_uart.pbi : INDEXER E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_uart.xcl |  $
+E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\LIB\source\lpc17xx_uart.c
+  flags = -out=E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_uart.pbi -f E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_uart.xcl
+
+build E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\system_LPC17xx.pbi : INDEXER E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\system_LPC17xx.xcl |  $
+E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\CMSIS\Source\Templates\system_LPC17xx.c
+  flags = -out=E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\system_LPC17xx.pbi -f E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\system_LPC17xx.xcl
+
+build E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\SRC\main.pbi : INDEXER E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\SRC\main.xcl |  $
+E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\SRC\main.c
+  flags = -out=E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\SRC\main.pbi -f E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\SRC\main.xcl
+
+build E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\SRC\peripherals.pbi : INDEXER E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\SRC\peripherals.xcl |  $
+E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\SRC\peripherals.c
+  flags = -out=E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\SRC\peripherals.pbi -f E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\SRC\peripherals.xcl
+
+build E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo\ecrypt-sync.pbi : INDEXER E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo\ecrypt-sync.xcl |  $
+E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Xoodoo_LIB\Xoodoo_Abby\ecrypt-sync.c
+  flags = -out=E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo\ecrypt-sync.pbi -f E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo\ecrypt-sync.xcl
+
+build E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo\xoodoo-masked-optimized.pbi : INDEXER E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo\xoodoo-masked-optimized.xcl |  $
+E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Xoodoo_LIB\Xoodoo_Abby\xoodoo-masked-optimized.c
+  flags = -out=E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo\xoodoo-masked-optimized.pbi -f E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo\xoodoo-masked-optimized.xcl
+
+build E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo_Masked.pbw : MAKEBROWSE E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo_Masked.pbd
+  flags = E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo_Masked.pbd -output E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo_Masked.pbw
+
+build E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo_Masked_part0.pbi : PDBLINK E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_clkpwr.pbi |  $
+E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_gpio.pbi $
+E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_libcfg_default.pbi
+  flags = -M E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo_Masked_part0.pbi E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_clkpwr.pbi E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_gpio.pbi E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_libcfg_default.pbi
+
+build E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo_Masked_part1.pbi : PDBLINK E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_pinsel.pbi |  $
+E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_uart.pbi $
+E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\system_LPC17xx.pbi
+  flags = -M E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo_Masked_part1.pbi E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_pinsel.pbi E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\lpc17xx_uart.pbi E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\CMSIS\system_LPC17xx.pbi
+
+build E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo_Masked_part2.pbi : PDBLINK E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\SRC\main.pbi |  $
+E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\SRC\peripherals.pbi $
+E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo\ecrypt-sync.pbi
+  flags = -M E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo_Masked_part2.pbi E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\SRC\main.pbi E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\SRC\peripherals.pbi E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo\ecrypt-sync.pbi
+
+build E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo_Masked_part3.pbi : PDBLINK E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo\xoodoo-masked-optimized.pbi
+  flags = -M E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo_Masked_part3.pbi E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo\xoodoo-masked-optimized.pbi
+
+build E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo_Masked.pbd : PDBLINK E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo_Masked_part0.pbi |  $
+E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo_Masked_part1.pbi $
+E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo_Masked_part2.pbi $
+E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo_Masked_part3.pbi
+  flags = -M E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo_Masked.pbd E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo_Masked_part0.pbi E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo_Masked_part1.pbi E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo_Masked_part2.pbi E$:\PhD_Works\Tron_Project\IAR_Projects\LPC1768_Xoodoo_masked\Debug\BrowseInfo\Xoodoo_Masked_part3.pbi
+
